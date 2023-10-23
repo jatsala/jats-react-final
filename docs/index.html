@@ -109,6 +109,16 @@
               
                 
                 <li><a
+                  href='#togglecompleteditem'
+                  class="">
+                  toggleCompletedItem
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
                   href='#insertnewitemonenterkey'
                   class="">
                   insertNewItemOnEnterKey
@@ -373,7 +383,8 @@ Se crea una variable de estado donde se almacena el valor de la configuración e
   </div>
   
 
-  <p>Añade una nueva tarea a la lista de Tareas</p>
+  <p>Añade una nueva tarea a la lista de Tareas.
+v2: La nueva tarea se añade como un objeto {task: nombre de la tarea, completed: si esta completada o no}`</p>
 
     <div class='pre p1 fill-light mt0'>addNewTask</div>
   
@@ -567,6 +578,69 @@ Se crea una variable de estado donde se almacena el valor de la configuración e
             <span class='code bold'>index</span> <code class='quiet'>(any)</code>
 	    Índice de la tarea a eliminar
 
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='togglecompleteditem'>
+      toggleCompletedItem
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Cambia el item por completado &#x3C;-> pendiente</p>
+
+    <div class='pre p1 fill-light mt0'>toggleCompletedItem</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>index</span> <code class='quiet'>(any)</code>
+	    
           </div>
           
         </div>

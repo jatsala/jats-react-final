@@ -11,10 +11,11 @@ const TaskList = () => {
   const [tasklist, setTasklist] = useState([]);
 
   /**
-   * Añade una nueva tarea a la lista de Tareas
+   * Añade una nueva tarea a la lista de Tareas.
+   * v2: La nueva tarea se añade como un objeto {task: nombre de la tarea, completed: si esta completada o no}`
    */
   const addNewTask = () => {
-    setTasklist([...tasklist, newTask]);
+    setTasklist([...tasklist, { task: newTask, completed: false }]);
     setNewTask("");
   };
 
@@ -41,6 +42,16 @@ const TaskList = () => {
   }
 
   /**
+   * Cambia el item por completado <-> pendiente
+   * @param {*} index 
+   */
+  const toggleCompletedItem = (index) => {
+    let newTasklist = tasklist;
+    newTasklist[index].completed = !newTasklist[index].completed;
+    setTasklist([...newTasklist]);
+  }
+
+  /**
    * Añade una nueva tarea cuando se presiona la tecla Enter
    * @param {*} e - Evento onKeyDown que proviene por defecto de React
    */
@@ -58,15 +69,16 @@ const TaskList = () => {
       ? (<p>Task List is Empty</p>)
       : (
         <ul>
-          {tasklist.map((task, index) => (
+          {tasklist.map((item, index) => (
             <li key={index}>
               <input
                 type="checkbox"
-                onClick={() => removeItem(index)}
-                checked={false}
+                // onClick={() => removeItem(index)}
+                onClick={() => toggleCompletedItem(index)}
+                checked={item.completed}
                 onChange={() => { }}
               />
-              {task}
+              {item.task}
             </li>
           ))}
         </ul>
